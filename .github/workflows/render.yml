@@ -5,6 +5,10 @@ on:
   push:
     branches: [main]
 
+concurrency:
+  group: pythagorean-video-render
+  cancel-in-progress: true
+
 jobs:
   render:
     runs-on: ubuntu-latest

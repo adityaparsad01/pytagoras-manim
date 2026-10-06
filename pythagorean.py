@@ -2,11 +2,11 @@ from manimlib import *
 
 class PythagoreanTheorem(Scene):
     def construct(self):
-        title = Text("Why does a² + b² = c²?", font_size=52).to_edge(UP)
+        title = Text("Why does a^2 + b^2 = c^2?", font_size=52).to_edge(UP)
         subtitle = Text("A visual proof of the Pythagorean theorem", font_size=30)
         subtitle.next_to(title, DOWN, buff=0.18)
         self.play(Write(title), FadeIn(subtitle))
-        self.wait(1)
+        self.wait(3)
 
         A = LEFT * 3.2 + DOWN * 2.0
         B = RIGHT * 0.8 + DOWN * 2.0
@@ -24,7 +24,7 @@ class PythagoreanTheorem(Scene):
         )
         self.play(ShowCreation(tri), ShowCreation(right_angle))
         self.play(Write(a_label), Write(b_label), Write(c_label))
-        self.wait(1)
+        self.wait(3)
 
         question = Text("What do the squares on the sides tell us?", font_size=34).to_edge(DOWN)
         self.play(Write(question))
@@ -32,12 +32,12 @@ class PythagoreanTheorem(Scene):
         sq_a = Square(side_length=1.35, stroke_width=4).move_to(A + LEFT*0.78 + DOWN*0.68)
         sq_b = Square(side_length=1.8, stroke_width=4).move_to((A+B)/2 + DOWN*1.05)
         sq_c = Square(side_length=2.25, stroke_width=4).move_to((B+C)/2 + RIGHT*0.92)
-        lab_a = Text("a² = 9", font_size=28).move_to(sq_a.get_center())
-        lab_b = Text("b² = 16", font_size=28).move_to(sq_b.get_center())
-        lab_c = Text("c² = 25", font_size=28).move_to(sq_c.get_center())
+        lab_a = Text("a^2 = 9", font_size=28).move_to(sq_a.get_center())
+        lab_b = Text("b^2 = 16", font_size=28).move_to(sq_b.get_center())
+        lab_c = Text("c^2 = 25", font_size=28).move_to(sq_c.get_center())
         self.play(ShowCreation(sq_a), ShowCreation(sq_b), ShowCreation(sq_c),
                   FadeIn(lab_a), FadeIn(lab_b), FadeIn(lab_c))
-        self.wait(1)
+        self.wait(3)
 
         equation = Text("9 + 16 = 25", font_size=44).to_edge(DOWN)
         self.play(FadeOut(question), Write(equation))
@@ -71,22 +71,22 @@ class PythagoreanTheorem(Scene):
 
         self.play(ShowCreation(big))
         self.play(ShowCreation(tris), ShowCreation(center_sq))
-        center_label = Text("c²", font_size=42).move_to(center)
+        center_label = Text("c^2", font_size=42).move_to(center)
         self.play(Write(center_label))
 
-        area_note = Text("Large square area = (a + b)²", font_size=34).to_edge(DOWN)
+        area_note = Text("Large square area = (a + b)^2", font_size=34).to_edge(DOWN)
         self.play(Write(area_note))
-        self.wait(1)
+        self.wait(3)
 
-        expansion = Text("(a + b)² = a² + 2ab + b²", font_size=40).to_edge(DOWN)
+        expansion = Text("(a + b)^2 = a^2 + 2ab + b^2", font_size=40).to_edge(DOWN)
         self.play(Transform(area_note, expansion))
-        self.wait(1)
+        self.wait(3)
 
-        final_eq = Text("a² + 2ab + b² = c² + 2ab", font_size=38).to_edge(DOWN)
+        final_eq = Text("a^2 + 2ab + b^2 = c^2 + 2ab", font_size=38).to_edge(DOWN)
         self.play(Transform(area_note, final_eq))
-        self.wait(1)
+        self.wait(3)
 
-        result = Text("a² + b² = c²", font_size=58).move_to(DOWN*2.6)
+        result = Text("a^2 + b^2 = c^2", font_size=58).move_to(DOWN*2.6)
         self.play(FadeOut(tris), FadeOut(big), FadeOut(center_sq),
                   FadeOut(center_label), Transform(area_note, result))
         self.wait(2)
