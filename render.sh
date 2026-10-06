@@ -8,7 +8,7 @@ if [ ! -x ".venv/bin/manimgl" ]; then
   .venv/bin/pip install 'setuptools<81' manimgl
 fi
 espeak-ng -s 155 -p 45 -v en-us -f narration.txt -w audio/narration.wav
-xvfb-run -a .venv/bin/manimgl -w -m pythagorean.py PythagoreanTheorem
+timeout 600 xvfb-run -a -s '-screen 0 1280x720x24' env LIBGL_ALWAYS_SOFTWARE=1 .venv/bin/manimgl -w -m pythagorean.py PythagoreanTheorem
 VIDEO="$(find media -type f -name '*.mp4' | sort | tail -1)"
 test -n "$VIDEO"
 ffmpeg -y -i "$VIDEO" -i audio/narration.wav -filter_complex "[1:a]apad[a]" -map 0:v:0 -map "[a]" -c:v copy -c:a aac -b:a 128k -shortest dist/pythagorean_theorem.mp4
