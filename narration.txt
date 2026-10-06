@@ -1,25 +1,15 @@
 Why does a squared plus b squared equal c squared?
 
-Let’s see it instead of memorizing it.
+Start with a right triangle. The shorter sides are a and b, and the hypotenuse is c.
 
-Start with any right triangle. The two shorter sides are a and b. The side opposite the right angle is the hypotenuse, c.
+Build a square on each side. Their areas are a squared, b squared, and c squared.
 
-Here’s a three, four, five triangle. Build a square on each side. The three areas are a squared, b squared, and c squared.
+For a three, four, five triangle, that gives nine plus sixteen equals twenty-five.
 
-For this example, that means nine plus sixteen equals twenty-five.
+Now make it general. Put four identical triangles inside a larger square with side a plus b.
 
-But why does this always work?
+The large square has area a squared plus two a b plus b squared. The four triangles use two a b, leaving a center square with area c squared.
 
-Take four identical copies of the same right triangle and place them inside one large square. The large square has side length a plus b.
+Cancel two a b, and we get a squared plus b squared equals c squared.
 
-That means its area is a plus b, squared: a squared, plus two a b, plus b squared.
-
-The four triangles together have area two a b. What remains in the middle is a square with area c squared.
-
-So the same total area can be written in two ways: a squared plus two a b plus b squared equals c squared plus two a b.
-
-Now the two a b terms cancel.
-
-And what remains is the Pythagorean theorem: a squared plus b squared equals c squared.
-
-The geometry makes the equation inevitable.
+That is the Pythagorean theorem.
