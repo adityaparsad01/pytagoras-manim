@@ -6,7 +6,7 @@ on:
     branches: [main]
 
 concurrency:
-  group: pythagorean-video-render-v2
+  group: pythagorean-video-v2
   cancel-in-progress: true
 
 jobs:
@@ -16,30 +16,23 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-
-      - name: Install Pango build dependency
+      - name: Install system dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y libpango1.0-dev ffmpeg xvfb
-
       - name: Install ManimGL
         run: |
           python -m pip install --upgrade pip
           python -m pip install 'setuptools<81' manimgl
-
-      - name: Render ManimGL
-        run: |
-          chmod +x render.sh
-          ./render.sh
-
+      - name: Render 1080p video
+        run: ./render.sh
       - name: Upload MP4
         uses: actions/upload-artifact@v4
         with:
-          name: pythagorean-theorem-video
-          path: dist/pythagorean_theorem.mp4
+          name: pythagorean-theorem-video-v2
+          path: dist/pythagorean_theorem_v2.mp4
           retention-days: 30
