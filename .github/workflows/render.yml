@@ -1,0 +1,28 @@
+name: Render video
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg xvfb espeak-ng python3-venv python3-pip libpango1.0-dev texlive-latex-base texlive-latex-extra
+      - name: Render ManimGL
+        run: |
+          chmod +x render.sh
+          ./render.sh
+      - name: Upload MP4
+        uses: actions/upload-artifact@v4
+        with:
+          name: pythagorean-theorem-video
+          path: dist/pythagorean_theorem.mp4
+          retention-days: 30
