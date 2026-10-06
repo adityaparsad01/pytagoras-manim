@@ -1,6 +1,6 @@
 .venv/
 __pycache__/
-audio/
+audio/*.wav
 dist/
 videos/
 *.pyc
