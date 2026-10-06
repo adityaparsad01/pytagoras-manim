@@ -1,0 +1,31 @@
+Why does a squared plus b squared equal c squared?
+
+Let's see it instead of memorizing it.
+
+Start with a right triangle. The two shorter sides are a and b, and the longest side, opposite the right angle, is c.
+
+Now build a square on each side.
+
+The area of a square with side a is a squared. The area on side b is b squared. And the area on the hypotenuse is c squared.
+
+For a three, four, five triangle, those areas are nine, sixteen, and twenty-five.
+
+Nine plus sixteen is twenty-five. But that is more than a numerical coincidence.
+
+Here is the general idea.
+
+Take a large square whose side is a plus b. Inside it, place four copies of the same right triangle. What remains in the middle is a square whose side is c.
+
+The area of the large square is a plus b, all squared.
+
+The same area can also be counted as the four triangles, plus the middle square.
+
+The four triangles together have area two ab. The middle square has area c squared.
+
+So we have a squared plus two ab plus b squared equals c squared plus two ab.
+
+Subtract two ab from both sides.
+
+And what remains is the Pythagorean theorem: a squared plus b squared equals c squared.
+
+The picture is the proof.
