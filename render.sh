@@ -5,7 +5,7 @@ mkdir -p dist audio
 if [ ! -x ".venv/bin/manimgl" ]; then
   python3 -m venv .venv
   .venv/bin/python -m pip install --upgrade pip
-  .venv/bin/pip install git+https://github.com/3b1b/manim.git
+  .venv/bin/pip install manimgl
 fi
 espeak-ng -s 155 -p 45 -v en-us -f narration.txt -w audio/narration.wav
 xvfb-run -a .venv/bin/manimgl -w -m pythagorean.py PythagoreanTheorem

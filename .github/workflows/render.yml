@@ -15,7 +15,7 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y ffmpeg xvfb espeak-ng python3-venv python3-pip libpango1.0-dev texlive-latex-base texlive-latex-extra
+          sudo apt-get install -y ffmpeg xvfb espeak-ng python3-venv python3-pip libpango1.0-dev
       - name: Render ManimGL
         run: |
           chmod +x render.sh
