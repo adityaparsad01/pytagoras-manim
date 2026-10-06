@@ -6,7 +6,7 @@ on:
     branches: [main]
 
 concurrency:
-  group: pythagorean-video-render
+  group: pythagorean-video-render-v2
   cancel-in-progress: true
 
 jobs:
