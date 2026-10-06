@@ -4,6 +4,12 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
+    paths:
+      - 'pythagorean_v2.py'
+      - 'narration.txt'
+      - 'audio/**'
+      - 'render.sh'
+      - '.github/workflows/render.yml'
 
 concurrency:
   group: pythagorean-video-v2
